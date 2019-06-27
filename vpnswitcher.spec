@@ -9,7 +9,7 @@ License: MIT
 Summary: Desktop application for controlling Wireguard
 
 URL: https://github.com/xshram/vpnswitcher
-Source0: %{url}/archieve/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0: https://github.com/xshram/vpnswitcher
 BuildArch: noarch
 
 BuildRequires: python3-gobject 
