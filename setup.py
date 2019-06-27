@@ -10,11 +10,9 @@ setup(
         url='https://github.com/xshram/vpnswitcher'
         entry_points={
             'console_scripts': [
-                'vpnswitcher = '
-
+                'vpnswitcher = vpnswitcher.scripts.runbot:main'
                 ],
             },
-
         license='MIT',
         install_requires=['python3-gobject','python3-devel','gtk3','python3-cairo-devel'],
         author='Vladislav Vekyu',
