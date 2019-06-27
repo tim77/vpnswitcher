@@ -1,27 +1,28 @@
+%global commit      519185a45f0c39e4e66261c47e74768107f334eb
+%global shortcommit %(c=%{commit}; echo ${c:0:7})
+%global date        20190628
 
+Name:           vpnswitcher
+Version:        0
+Release:        1.%{date}git%{shortcommit}%{?dist}
 
+License:        MIT
+Summary:        Desktop application for controlling Wireguard
 
-Name: vpnswitcher
-Version: 1.0
-Release: 1%{?dist}
+URL:            https://github.com/xshram/vpnswitcher
+Source0:        %{url}/tarball/%{commit}#/%{name}-%{version}.%{date}git%{shortcommit}.tar.gz
+BuildArch:      noarch
 
-License: MIT
-Summary: Desktop application for controlling Wireguard
-
-URL: https://github.com/xshram/vpnswitcher
-Source0: https://github.com/xshram/vpnswitcher
-BuildArch: noarch
-
-BuildRequires: python3-gobject 
-BuildRequires: python3-devel
-BuildRequires: gtk3 
-BuildRequires: python3-cairo-devel
+BuildRequires:  gtk3-devel
+BuildRequires:  python3-cairo-devel
+BuildRequires:  python3-devel
+BuildRequires:  python3-gobject
 
 %description
 GUI Application for controlling your vpn(Wireguard)
 
 %prep
-%autosetup -p1
+%autosetup -n xshram-%{name}-%{shortcommit}
 
 %build
 %py3_build
@@ -31,3 +32,4 @@ GUI Application for controlling your vpn(Wireguard)
 
 %check
 %{__python3} setup.py test
+
